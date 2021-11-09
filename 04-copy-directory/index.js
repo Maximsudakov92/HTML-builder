@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
-const { mkdir, copyFile, rmdir } = require('fs/promises');
+const { mkdir, copyFile, rm } = require('fs/promises');
 
 async function copyFolder() {
-  await rmdir(path.join(__dirname, 'files-copy'), { recursive: true, force: true });
+  await rm(path.join(__dirname, 'files-copy'), { recursive: true, force: true });
 
   await mkdir(path.join(__dirname, 'files-copy'), () => {});
 
