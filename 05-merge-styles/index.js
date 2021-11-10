@@ -13,7 +13,7 @@ fs.readdir(path.join(__dirname, 'styles'), (err, items) => {
   
   items.filter(el => path.extname(`${__dirname}/styles/${el}`) === '.css')
     .forEach(item =>  fs.readFile(`${__dirname}/styles/${item}`,'UTF-8', (err, data) => {
-      console.log(item,'forEach');
+      
       concatData += data;
       fs.writeFile(`${__dirname}/project-dist/bundle.css`, concatData, function (err) {
         if (err) throw err;
